@@ -10,7 +10,7 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Install Dependencies
-        run: npm install  # ✅ Must include 'run'
+        run: npm install --force
 
       - name: Build Webpack
         run: npm run build
