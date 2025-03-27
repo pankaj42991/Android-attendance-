@@ -28,7 +28,7 @@ jobs:
           chmod +x gradlew
           ./gradlew assembleRelease
 
-      - name: Debug: Check Build Directory
+      - name: Check Build Directory
         run: |
           find android/app/build/ -type d  # ✅ Indentation issue fixed
 
