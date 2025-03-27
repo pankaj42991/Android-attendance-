@@ -23,10 +23,12 @@ jobs:
           java-version: '17'
 
       - name: Build with Gradle
-        run: |
-          cd android
-          chmod +x gradlew
-          ./gradlew assembleRelease
+  run: |
+    ls -la   # ✅ Debugging: Check current directory structure
+    cd android || cd app  # ✅ Try both directories
+    chmod +x gradlew
+    ./gradlew assembleRelease
+
 
       - name: Check Build Directory
         run: |
