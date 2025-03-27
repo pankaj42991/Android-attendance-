@@ -29,7 +29,11 @@ jobs:
         run: ls -la android/app/build/outputs/apk/release/
 
       - name: Build with Gradle
-        run: ./gradlew assembleRelease
+  run: |
+    cd android
+    chmod +x gradlew
+    ./gradlew assembleRelease
+    
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
