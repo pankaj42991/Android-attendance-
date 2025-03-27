@@ -22,22 +22,17 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Install Upload Artifact (Manually)
-        run: npm install -g @actions/artifact
-
-      - name: Check if build folder exists
-        run: ls -la android/app/build/outputs/apk/release/
-
       - name: Build with Gradle
-  run: |
-    cd android
-    chmod +x gradlew
-    ./gradlew assembleRelease
-    
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleRelease
+
+      - name: Debug: Check Build Directory
+        run: find android/app/build/ -type d
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: release-apk
           path: android/app/build/outputs/apk/release/app-release.apk
-          
