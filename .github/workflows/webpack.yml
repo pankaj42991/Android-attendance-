@@ -7,11 +7,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4  # ✅ Must include 'uses' or 'run'
+        run: npm install --legacy-peer-deps
 
       - name: Install Dependencies
         run: npm install  # ✅ Must include 'run'
 
       - name: Build Webpack
         run: npm run build
+
+        
+  
+  
         
