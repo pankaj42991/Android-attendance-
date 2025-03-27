@@ -18,10 +18,10 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-          
-- name: Check if build folder exists
-  run: ls -la
-  
+
+      - name: Check if build folder exists
+        run: ls -la
+
       - name: Build with Gradle
         run: ./gradlew assembleRelease
 
