@@ -29,12 +29,11 @@ jobs:
           ./gradlew assembleRelease
 
       - name: Debug: Check Build Directory
-  run: |
-    find android/app/build/ -type d
-    
+        run: find android/app/build/ -type d
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: release-apk
           path: android/app/build/outputs/apk/release/app-release.apk
+          
